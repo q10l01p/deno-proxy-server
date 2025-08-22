@@ -85,7 +85,4 @@ async function handleRequest(request: Request): Promise<Response> {
 console.log(`代理服务器启动在端口 ${PORT}`);
 console.log(`访问地址: http://127.0.0.1:${PORT}`);
 
-await serve(handleRequest, { 
-  port: PORT,
-  hostname: "127.0.0.1"
-});
+await serve(handleRequest); // 移除 { port: PORT, hostname: "127.0.0.1" }
